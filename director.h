@@ -45,5 +45,11 @@ public:
         this->award = award;
        
     }
+ friend ostream& operator<<(ostream& os, const Director& director);
 };
+
+ostream& operator<<(ostream& os, const Director& director) {
+    os << "Director: " << director.d_name << ", Year: " << director.d_year << ", Award: " << director.award << endl;
+    return os;
+}
 #endif //DIRECTOR_H
