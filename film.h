@@ -56,6 +56,17 @@ public:
         this->country = country;
 
     }
+ friend ostream& operator<<(ostream& os, const Film& f);
+};
+
+ostream& operator<<(ostream& os, const Film& f) {
+    os << "Film: " << f.title << endl;
+    os << "Year of release: " << f.f_year << endl;
+    os << "Rating on Kinopoisk: " << f.rating << endl;
+    os << "Producing country: " << f.country << endl;
+    return os;
+}
+
 };
 #endif //FILM_H 
 
