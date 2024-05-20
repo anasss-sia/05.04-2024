@@ -66,7 +66,5 @@ ostream& operator<<(ostream& os, const Film& f) {
     os << "Producing country: " << f.country << endl;
     return os;
 }
-
-};
 #endif //FILM_H 
 
