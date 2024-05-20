@@ -45,5 +45,4 @@ ostream& operator<<(ostream& os, const Mainactors& ma) {
     os << "Main Actor: " << ma.a_name << ", Year: " << ma.a_year << endl;
     return os;
 }
-};
 #endif //MAINACTOR_H
