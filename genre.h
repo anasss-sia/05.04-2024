@@ -28,5 +28,4 @@ ostream& operator<<(ostream& os, const Genre& g) {
     os << "Genre: " << g.g_name << endl;
     return os;
 }
-};
 #endif //GENRE_H
