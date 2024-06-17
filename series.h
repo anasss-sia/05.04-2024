@@ -13,6 +13,8 @@ public:
     Series(string title, int releaseYear, double rating, int numOfSeasons, int numOfEpisodes);
 
     void getSeriesInfo();
+
+friend ostream& operator<<(ostream& os, const Series& f);
 };
 
 #endif // SERIES_H
