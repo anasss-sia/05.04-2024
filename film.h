@@ -14,6 +14,10 @@ public:
     Film(string title, int releaseYear, double rating);
 
     void getFilmInfo();
+
+    friend ostream& operator<<(ostream& os, const Film& f);
 };
+
+ostream& operator<<(ostream& os, const Film& f);
 
 #endif // FILM_H
