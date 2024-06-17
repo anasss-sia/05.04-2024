@@ -2,6 +2,7 @@
 #define PERSON_H
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -9,21 +10,17 @@ class Person {
 private:
     string name;
     int year;
-    
+
 public:
     Person();
-    Person(string& name, int& year);
+    Person(const string& name, int year);
     ~Person();
-    string getName();
-    void setName(string& name);
-    int getYear();
+    string getName() const;
+    void setName(const string& name);
+    int getYear() const;
     void setYear(int year);
-    
 
-    inline friend ostream& operator<<(ostream& os, const Person& p);
+    friend ostream& operator<<(ostream& os, const Person& p);
 };
-ostream& operator<<(ostream& os, const Person& p) {
-    os << "Real name: " << p.name;
-    return os;
-}
-#endif //PERSON_H
+
+#endif // PERSON_H
