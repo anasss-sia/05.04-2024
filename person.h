@@ -1,26 +1,18 @@
 #ifndef PERSON_H
 #define PERSON_H
 
-#include <iostream>
 #include <string>
-
-using namespace std;
 
 class Person {
 private:
-    string name;
-    int year;
+    std::string name;
+    int yearOfBirth;
 
 public:
-    Person();
-    Person(const string& name, int year);
-    ~Person();
-    string getName() const;
-    void setName(const string& name);
-    int getYear() const;
-    void setYear(int year);
-
-    friend ostream& operator<<(ostream& os, const Person& p);
+    Person(std::string n, int yob);
+    std::string getName() const;
+    int getYearOfBirth() const;
+    virtual void displayInfo() const;
 };
 
-#endif // PERSON_H
+#endif
