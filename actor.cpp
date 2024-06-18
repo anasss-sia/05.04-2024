@@ -14,3 +14,8 @@ string Actor::getCountry() {
 void Actor::setCountry(string& country) {
     this->country = country;
 }
+
+ostream& operator<<(ostream& os, const Actor& a) {
+    os << "Name: " << a.getName() << ", Year: " << a.getYear();
+    return os;
+}
