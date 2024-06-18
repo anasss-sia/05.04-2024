@@ -1,18 +1,16 @@
 #ifndef CAMERAMAN_H
 #define CAMERAMAN_H
 
-#include <iostream>
 #include "person.h"
 
 class Cameraman : public Person {
-protected:
-    string bwork;
+private:
+    std::string bestWork;
+
 public:
-    Cameraman();
-    Cameraman(string& name, int& year, string& bwork);
-    ~Cameraman();
-    virtual string getBwork();
-    void setBwork(string& bwork);
+    Cameraman(std::string n, int yob, std::string bw);
+    void displayInfo() const;
+    friend std::ostream& operator<<(std::ostream& os, const Cameraman& c);
 };
 
-#endif 
+#endif
