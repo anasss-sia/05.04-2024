@@ -1,19 +1,17 @@
 #ifndef DIRECTOR_H
 #define DIRECTOR_H
 
-#include <iostream>
 #include "person.h"
 
 class Director : public Person {
-protected:
-    string award;
+private:
+    std::string award;
+
 public:
-    Director();
-    Director(string& name, int& year, string& award);
-    ~Director();
-    virtual string getAward();
-    void setAward(string& award);
+    Director(std::string n, int yob, std::string aw);
+    void displayInfo() const;
+    friend std::ostream& operator<<(std::ostream& os, const Director& d);
 };
 
-#endif 
+#endif
 
