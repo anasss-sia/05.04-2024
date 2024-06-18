@@ -1,17 +1,40 @@
-#include "Film.h"
+#include "film.h"
 
-Film::Film(string title, int releaseYear, double rating)
-    : title(title), releaseYear(releaseYear), rating(rating) {}
+Film::Film() {
+    title = "";
+    ryear = 0;
+    rating = 0.0;
+}
 
-void Film::getFilmInfo() {
-    cout << "Title: " << title << endl;
-    cout << "Release Year: " << releaseYear << endl;
-    cout << "Rating: " << rating << endl;
+Film::Film(const string& title, int ryear, double rating) : title(title), ryear(ryear) {}
+
+Film::~Film() {}
+
+string Film::getTitle() const {
+    return title;
+}
+
+void Film::setTitle(const string& title) {
+    this->title = title;
+}
+
+int Film::getRyear() const {
+    return ryear;
+}
+
+void Film::setRyear(int ryear) {
+    this->ryear = ryear;
+}
+
+
+double Film::getRating() const {
+    return rating;
+}
+
+void Film::setRating(int rating) {
+    this->rating = rating;
 }
 
 ostream& operator<<(ostream& os, const Film& f) {
-    os << "Title: " << f.title << endl;
-    os << "Release Year: " << f.releaseYear << endl;
-    os << "Rating: " << f.rating << endl;
+    os << "Film: " << f.getTitle() << ", Year of release: " << f.getRyear() << "Rating on Kinopoisk: " << f.getRyear();
     return os;
-}
