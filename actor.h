@@ -1,20 +1,16 @@
 #ifndef ACTOR_H
 #define ACTOR_H
 
-#include <iostream>
 #include "person.h"
 
 class Actor : public Person {
-protected:
-    string country;
-public:
-    Actor();
-    Actor(string& name, int& year, string& country);
-    ~Actor();
-    virtual string getCountry();
-    void setCountry(string& country);
+private:
+    std::string countryOfBirth;
 
-    friend ostream& operator<<(ostream& os, const Actor& a);
+public:
+    Actor(std::string n, int yob, std::string cob);
+    void displayInfo() const;
+    friend std::ostream& operator<<(std::ostream& os, const Actor& a);
 };
 
-#endif  
+#endif 
