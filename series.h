@@ -2,21 +2,16 @@
 #define SERIES_H
 
 #include "film.h"
-using namespace std;
 
 class Series : public Film {
 private:
-    int numOfSeasons;
-    int numOfEpisodes;
+    int numSeasons;
+    int numEpisodes;
 
 public:
-    Series(string title, int releaseYear, double rating, int numOfSeasons, int numOfEpisodes);
-
-    void getSeriesInfo();
-
-friend ostream& operator<<(ostream& os, const Series& s);
-
+    Series(std::string t, int ry, int ns, int ne);
+    void displayInfo() const;
+    friend std::ostream& operator<<(std::ostream& os, const Series& s);
 };
-ostream& operator<<(ostream& os, const Series& s);
 
-#endif // SERIES_H
+#endif
