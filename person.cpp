@@ -1,31 +1,17 @@
 #include "person.h"
+#include <iostream>
 
-Person::Person() {
-    name = "";
-    year = 0;
-}
+Person::Person(std::string n, int yob) : name(n), yearOfBirth(yob) {}
 
-Person::Person(const string& name, int year) : name(name), year(year) {}
-
-Person::~Person() {}
-
-string Person::getName() const {
+std::string Person::getName() const {
     return name;
 }
 
-void Person::setName(const string& name) {
-    this->name = name;
+int Person::getYearOfBirth() const {
+    return yearOfBirth;
 }
 
-int Person::getYear() const {
-    return year;
-}
-
-void Person::setYear(int year) {
-    this->year = year;
-}
-
-ostream& operator<<(ostream& os, const Person& p) {
-    os << "Name: " << p.getName() << ", Year: " << p.getYear();
-    return os;
+void Person::displayInfo() const {
+    std::cout << "Name: " << name << std::endl;
+    std::cout << "Year of Birth: " << yearOfBirth << std::endl;
 }
