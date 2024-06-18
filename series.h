@@ -14,9 +14,9 @@ public:
 
     void getSeriesInfo();
 
-friend ostream& operator<<(ostream& os, const Series& f);
+friend ostream& operator<<(ostream& os, const Series& s);
 
 };
-ostream& operator<<(ostream& os, const Series& f);
+ostream& operator<<(ostream& os, const Series& s);
 
 #endif // SERIES_H
