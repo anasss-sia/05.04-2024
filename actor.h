@@ -13,6 +13,8 @@ public:
     ~Actor();
     virtual string getCountry();
     void setCountry(string& country);
+
+    friend ostream& operator<<(ostream& os, const Actor& a);
 };
 
-#endif 
+#endif  
