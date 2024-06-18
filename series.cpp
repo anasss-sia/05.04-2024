@@ -1,15 +1,21 @@
 #include "series.h"
-using namespace std;
+#include <iostream>
 
-Series::Series(string title, int releaseYear, double rating, int numOfSeasons, int numOfEpisodes)
-    : Film(title, releaseYear, rating), numOfSeasons(numOfSeasons), numOfEpisodes(numOfEpisodes) {}
 
-void Series::getSeriesInfo() {
-    getFilmInfo();
-    cout << "Seasons: " << numOfSeasons << " - Episodes: " << numOfEpisodes << endl;
+Series::Series(std::string t, int ry, int ns, int ne) : Film(t, ry), numSeasons(ns), numEpisodes(ne) {}
+
+
+void Series::displayInfo() const {
+	Film::displayInfo();
+	std::cout << "Number of Seasons: " << numSeasons << std::endl;
+	std::cout << "Number of Episodes: " << numEpisodes << std::endl;
 }
-ostream& operator<<(ostream& os, const Series& s) {
-    os << "Title: " << s.title << endl;
-    os << "Release Year: " << s.releaseYear << endl;
-    os << "Rating: " << s.rating << endl;
-    return os;
+
+
+std::ostream& operator<<(std::ostream& os, const Series& s) {
+	os << "Title: " << s.title << std::endl;
+	os << "Release Year: " << s.releaseYear << std::endl;
+	os << "Number of Seasons: " << s.numSeasons << std::endl;
+	os << "Number of Episodes: " << s.numEpisodes << std::endl;
+	return os;
+}
