@@ -1,117 +1,80 @@
-﻿#include <iostream>
-#include "film.h"
-#include "genre.h"
-#include "mainactors.h"
+#include <iostream>
+#include "actor.h"
+#include "cameramen.h"
 #include "director.h"
-#include "cameraman.h"
+#include "film.h"
+#include "series.h"
 
+int main() {
+    Actor actor0("Brad Pitt", 1963, "USA");
+    Cameraman cameraman0("Roger Deakins", 1949, "Blade Runner 2049");
+    Director director0("Christopher Nolan", 1970, "Oscar for Best Director");
+    Film film0("Inception", 2010);
 
-using namespace std;
+    Actor actor1("Omar Si", 1981, "France");
+    Cameraman cameraman1("Nicolas Massart", 1972, "Swap places");
+    Director director1("Hugo Gelin", 1974, "Nominated for 'Best Debut work");
+    Film film1("2 + 1", 2011);
 
-ostream& operator<<(ostream& os, const Film& f);
-ostream& operator<<(ostream& os, const Genre& g);
-ostream& operator<<(ostream& os, const Mainactors& a);
-ostream& operator<<(ostream& os, const Director& d);
+    Actor actor2("Vladimir Zelenskiy", 1978, "Ukrain");
+    Cameraman cameraman2("Nikolay Kovbas", 1985, "9 months");
+    Director director2("Sarik Andreasyan", 1982, "No awards");
+    Film film2("Office romance.Our time", 2018);
 
-int main()
-{
+    Actor actor3("Leonardo DiCaprio", 1974, "USA");
+    Cameraman cameraman3("Robert Richardson", 1955, "Django Unchained");
+    Director director3("Martin Scorsese", 1942, "Oscar, 2007");
+    Film film3("Shutter Island", 2010);
 
-    string title1("'2+1'");
-    string g_name1("Comedy");
-    string country1("France");;
-    string a_name1("Omar Si");
-    string d_name1("Hugo Gelin");
-    string s_name1("Eugenio Derber");
-    string award1("Nominated for 'Best Debut work'");
-    string c_name1("Nicolas Massart");
-    string bwork1("'Swap places'"); 
-
-
-    string title2("'Office romance. Our time'");
-    string g_name2("Drama");
-    string country2("Russia");;
-    string a_name2("Vladimir Zelenskiy");
-    string d_name2("Sarik Andreasyan");
-    string award2("No awards");
-    string s_name2("Nikolay Kovbas");
-    string c_name2("Peter Bratersky");
-    string bwork2("'9 months'");
-
-
-    string title3("'Shutter Island'");
-    string g_name3("Thriller");
-    string country3("USA");
-    string a_name3("Leonardo DiCaprio");
-    string d_name3("Martin Scorsese");
-    string award3("Oscar, 2007");
-    string s_name3("Laeta Kalogridis");
-    string c_name3("Robert Richardson");
-    string bwork3("'Django Unchained'");
+    Series series("Shameless", 2011, 11, 134);
+    Actor actor4("William H.Macy", 1950, "USA");
+    Cameraman cameraman4("John Wells", 1968, "Stranger");
+    Director director4("Sheila Callahan", 1965, "No awards");
+   
 
 
 
-    cout << "Films on Kinopoisk" << endl << endl;
+    std::cout << "Film Information:" << std::endl;
+    std::cout << film0 << std::endl;
+    std::cout << "Actor Information:" << std::endl;
+    std::cout << actor0 << std::endl;
+    std::cout << "Cameraman Information:" << std::endl;
+    std::cout << cameraman0 << std::endl;
+    std::cout << "Director Information:" << std::endl;
+    std::cout << director0 << std::endl;
 
 
-    Film a(title1, 2016, 7.3, country1);
-    cout << "Film: " << a.get_title() << endl;
-    cout << "Year of release: " << a.get_ryear() << endl;
-    cout << "Rating on Kinopoisk: " << a.get_rating() << endl;
-    cout << "Producting country: " << a.get_country() << endl;
-    Genre b(g_name1);
-    cout << "Genre of film: " << b.get_name() << endl;
-    Mainactors c(a_name1, 1987);
-    cout << "Main actor: " << c.get_aname() << endl;
-    cout << "Birth year of the actor: " << c.get_ayear() << endl;
-    Director d(d_name1, 1980, award1);
-    cout << "Director: " << d.get_award() << endl;
-    cout << "Birth year of the director: " << d.get_dyear() << endl;
-    cout << "Award: " << d.get_award() << endl;
-    Cameraman cmn1(c_name1, bwork1);
-    cout << "Cameraman: " << cmn1.get_cname() << endl;
-    cout << "Best work: " << cmn1.get_bwork() << endl << endl;
+    std::cout << "Film Information:" << std::endl;
+    std::cout << film1 << std::endl;
+    std::cout << "Actor Information:" << std::endl;
+    std::cout << actor1 << std::endl;
+    std::cout << "Cameraman Information:" << std::endl;
+    std::cout << cameraman1 << std::endl;
+    std::cout << "Director Information:" << std::endl;
+    std::cout << director1 << std::endl;
 
+    std::cout << "Film Information:" << std::endl;
+    std::cout << film2 << std::endl;
+    std::cout << "Actor Information:" << std::endl;
+    std::cout << actor2 << std::endl;
+    std::cout << "Cameraman Information:" << std::endl;
+    std::cout << cameraman2 << std::endl;
+    std::cout << "Director Information:" << std::endl;
+    std::cout << director2 << std::endl;
 
+    std::cout << "Film Information:" << std::endl;
+    std::cout << film3 << std::endl;
+    std::cout << "Actor Information:" << std::endl;
+    std::cout << actor3 << std::endl;
+    std::cout << "Cameraman Information:" << std::endl;
+    std::cout << cameraman3 << std::endl;
+    std::cout << "Director Information:" << std::endl;
+    std::cout << director3 << std::endl;
 
+    
 
-
-    Film e(title2, 2011, 4.1, country2);
-    cout << "Film: " << e.get_title() << endl;
-    cout << "Year of release: " << e.get_ryear() << endl;
-    cout << "Rating on Kinopoisk: " << e.get_rating() << endl;
-    cout << "Producting country: " << e.get_country() << endl;
-    Genre f(g_name2);
-    cout << "Genre of film: " << f.get_name() << endl;
-    Mainactors g(a_name2, 1978);
-    cout << "Main actor: " << g.get_aname() << endl;
-    cout << "Birth year of the actor: " << g.get_ayear() << endl;
-    Director h(d_name2, 1984, award2);
-    cout << "Director: " << h.get_award() << endl;
-    cout << "Birth year of the director: " << h.get_dyear() << endl;
-    cout << "Award: " << h.get_award() << endl;
-    Cameraman cmn2(c_name2, bwork2);
-    cout << "Cameraman: " << cmn2.get_cname() << endl;
-    cout << "Best work: " << cmn2.get_bwork() << endl << endl;
-
-
-    Film i(title3, 2008, 8.5, country3);
-    cout << "Film: " << i.get_title() << endl;
-    cout << "Year of release: " << i.get_ryear() << endl;
-    cout << "Rating on Kinopoisk: " << i.get_rating() << endl;
-    cout << "Producting country: " << i.get_country() << endl;
-    Genre j(g_name3);
-    cout << "Genre of film: " << j.get_name() << endl;
-    Mainactors k(a_name3, 1974);
-    cout << "Main actor: " << k.get_aname() << endl;
-    cout << "Birth year of the actor: " << k.get_ayear() << endl;
-    Director o(d_name3, 1942, award3);
-    cout << "Director: " << o.get_award() << endl;
-    cout << "Birth year of the director: " << o.get_dyear() << endl;
-    cout << "Award: " << o.get_award() << endl;
-    Cameraman cmn3(c_name3, bwork3);
-    cout << "Cameraman: " << cmn3.get_cname() << endl;
-    cout << "Best work: " << cmn3.get_bwork() << endl;
-
+   std::cout << "Series Information:" << std::endl;
+   std::cout << series << std::endl;
 
     return 0;
 }
